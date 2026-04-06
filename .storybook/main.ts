@@ -12,6 +12,10 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  viteFinal: async (config) => {
+    config.base = "/Design-System/";
+    return config;
+  },
 };
 
 export default config;
