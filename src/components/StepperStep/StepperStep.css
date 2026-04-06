@@ -1,0 +1,77 @@
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Circle ──────────────────────────────────────────── */
+
+.stepper-step__circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.stepper-step__circle--complete {
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.stepper-step__circle--active {
+  background-color: var(--color-white);
+  border-color: var(--color-primary-500);
+}
+
+.stepper-step__circle--upcoming {
+  background-color: var(--color-white);
+  border-color: var(--color-neutral-300);
+}
+
+/* ── Circle inner text ───────────────────────────────── */
+
+.stepper-step__check {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-white);
+}
+
+.stepper-step__number {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.stepper-step__circle--active .stepper-step__number {
+  color: var(--color-primary-500);
+}
+
+.stepper-step__circle--upcoming .stepper-step__number {
+  color: var(--color-neutral-400);
+}
+
+/* ── Label ───────────────────────────────────────────── */
+
+.stepper-step__label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  line-height: 16px;
+}
+
+.stepper-step__label--complete,
+.stepper-step__label--active {
+  color: var(--color-base-dark);
+}
+
+.stepper-step__label--upcoming {
+  color: var(--color-neutral-400);
+}

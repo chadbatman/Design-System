@@ -1,0 +1,181 @@
+@keyframes shimmer-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ── Base card ────────────────────────────────────────── */
+
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card--default,
+.card--interactive,
+.card--user {
+  padding: 24px;
+}
+
+/* ── With image ───────────────────────────────────────── */
+
+.card--with-image {
+  padding: 0;
+}
+
+.card__image-placeholder {
+  width: 100%;
+  height: 120px;
+  background-color: var(--color-primary-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+}
+
+.card__image-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-neutral-400);
+}
+
+.card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Typography ───────────────────────────────────────── */
+
+.card__title {
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--color-base-dark);
+  margin: 0;
+}
+
+.card__description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-neutral-600);
+  margin: 0;
+}
+
+/* ── User type ────────────────────────────────────────── */
+
+.card__user-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.card__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card__user-role {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-neutral-500);
+}
+
+.card__divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-neutral-200);
+}
+
+/* ── Loading shimmer ──────────────────────────────────── */
+
+.card--loading.card--default,
+.card--loading.card--interactive,
+.card--loading.card--user {
+  padding: 24px;
+}
+
+.card--loading.card--with-image {
+  padding: 0;
+}
+
+.card--loading .card__shimmer--image {
+  border-radius: 10px 10px 0 0;
+  height: 120px;
+  width: 100%;
+}
+
+.card__shimmer {
+  background-color: var(--color-neutral-200);
+  border-radius: 4px;
+  animation: shimmer-pulse 1.5s ease-in-out infinite;
+}
+
+.card__shimmer--title {
+  width: 124px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.card__shimmer--role {
+  width: 100px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.card__shimmer-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card__shimmer--line {
+  height: 10px;
+  border-radius: 4px;
+}
+
+.card__shimmer--line-lg {
+  width: 192px;
+}
+
+.card__shimmer--line-md {
+  width: 154px;
+}
+
+.card__shimmer--line-sm {
+  width: 106px;
+}
+
+.card__shimmer--badge {
+  width: 72px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.card__shimmer--button {
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+}
+
+.card__shimmer--avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  flex-shrink: 0;
+}

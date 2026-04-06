@@ -1,0 +1,40 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+/* ── Types ─────────────────────────────────────────── */
+
+.badge--default {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-600);
+}
+
+.badge--primary {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-500);
+}
+
+.badge--success {
+  background-color: var(--color-semantic-success-light);
+  color: var(--color-semantic-success);
+}
+
+.badge--warning {
+  background-color: var(--color-semantic-warning-light);
+  color: var(--color-semantic-warning);
+}
+
+.badge--error {
+  background-color: var(--color-error-light);
+  color: var(--color-error);
+}

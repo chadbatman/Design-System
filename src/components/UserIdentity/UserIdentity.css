@@ -1,0 +1,49 @@
+.user-identity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-identity--md {
+  gap: 12px;
+}
+
+.user-identity--lg {
+  gap: 16px;
+}
+
+/* ── User info ────────────────────────────────────────── */
+
+.user-identity__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ── Name ─────────────────────────────────────────────── */
+
+.user-identity__name--md {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-base-dark);
+}
+
+.user-identity__name--lg {
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--color-base-dark);
+}
+
+/* ── Role ─────────────────────────────────────────────── */
+
+.user-identity__role {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-neutral-500);
+}
