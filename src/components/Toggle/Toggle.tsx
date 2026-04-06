@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId, useState } from "react";
 import "./Toggle.css";
 
 export interface ToggleProps {
@@ -10,11 +10,17 @@ export interface ToggleProps {
 
 export const Toggle: React.FC<ToggleProps> = ({
   label,
-  on = false,
+  on: onProp = false,
   disabled = false,
   onChange,
 }) => {
   const id = useId();
+  const [on, setOn] = useState(onProp);
+
+  const handleChange = (checked: boolean) => {
+    setOn(checked);
+    onChange?.(checked);
+  };
 
   return (
     <label
@@ -28,7 +34,7 @@ export const Toggle: React.FC<ToggleProps> = ({
           type="checkbox"
           checked={on}
           disabled={disabled}
-          onChange={(e) => onChange?.(e.target.checked)}
+          onChange={(e) => handleChange(e.target.checked)}
         />
         <span
           className={`toggle__track${on ? " toggle__track--on" : ""}${disabled ? " toggle__track--disabled" : ""}`}

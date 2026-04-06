@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId, useState } from "react";
 import "./Checkbox.css";
 
 export interface CheckboxProps {
@@ -10,11 +10,17 @@ export interface CheckboxProps {
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   label,
-  checked = false,
+  checked: checkedProp = false,
   disabled = false,
   onChange,
 }) => {
   const id = useId();
+  const [checked, setChecked] = useState(checkedProp);
+
+  const handleChange = (value: boolean) => {
+    setChecked(value);
+    onChange?.(value);
+  };
 
   return (
     <label
@@ -28,10 +34,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           type="checkbox"
           checked={checked}
           disabled={disabled}
-          onChange={(e) => onChange?.(e.target.checked)}
+          onChange={(e) => handleChange(e.target.checked)}
         />
         <span
-          className={`checkbox__box${checked ? " checkbox__box--checked" : ""}${disabled ? " checkbox__box--disabled" : ""}`}
+          className={`checkbox__box${checked ? " checkbox__box--checked" : ""}${disabled && !checked ? " checkbox__box--disabled" : ""}${disabled && checked ? " checkbox__box--checked checkbox__box--disabled" : ""}`}
         >
           {checked && <span className="checkbox__checkmark">✓</span>}
         </span>

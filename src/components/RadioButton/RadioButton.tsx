@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId, useState } from "react";
 import "./RadioButton.css";
 
 export interface RadioButtonProps {
@@ -10,11 +10,17 @@ export interface RadioButtonProps {
 
 export const RadioButton: React.FC<RadioButtonProps> = ({
   label,
-  selected = false,
+  selected: selectedProp = false,
   disabled = false,
   onChange,
 }) => {
   const id = useId();
+  const [selected, setSelected] = useState(selectedProp);
+
+  const handleChange = () => {
+    setSelected(true);
+    onChange?.();
+  };
 
   return (
     <label
@@ -28,7 +34,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
           type="radio"
           checked={selected}
           disabled={disabled}
-          onChange={() => onChange?.()}
+          onChange={handleChange}
         />
         <span
           className={`radio-button__circle${selected ? " radio-button__circle--selected" : ""}${disabled ? " radio-button__circle--disabled" : ""}`}
