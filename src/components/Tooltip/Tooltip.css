@@ -1,0 +1,72 @@
+/* Tooltip component styles */
+
+.tooltip__wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+  z-index: 50;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tooltip--with-title {
+  white-space: normal;
+  min-width: 160px;
+}
+
+/* ── Variants ───────────────────────────────────────────── */
+
+.tooltip--default {
+  background-color: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+}
+
+.tooltip--dark {
+  background-color: var(--color-base-dark);
+  border-color: var(--color-base-dark);
+}
+
+/* ── Title ──────────────────────────────────────────────── */
+
+.tooltip__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  color: var(--color-base-dark);
+}
+
+/* ── Content ────────────────────────────────────────────── */
+
+.tooltip__content {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  line-height: 16px;
+}
+
+.tooltip--default .tooltip__content {
+  color: var(--color-neutral-700);
+}
+
+.tooltip--dark .tooltip__content {
+  color: var(--color-white);
+}
+
+.tooltip--with-title .tooltip__content {
+  color: var(--color-neutral-600);
+}

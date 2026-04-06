@@ -18,6 +18,14 @@
   --color-error-700:   #991b1b;
   --color-error-light: #fee2e2;
   --color-white:       #ffffff;
+  --color-base-dark:              #111522;
+  --color-neutral-700:            #374151;
+  --color-semantic-success:       #16a34a;
+  --color-semantic-success-light: #dffaed;
+  --color-semantic-warning:       #d97706;
+  --color-semantic-warning-light: #fef0df;
+  --color-semantic-info:          #2563eb;
+  --color-semantic-info-light:    #e0eaff;
 }
 
 .btn {

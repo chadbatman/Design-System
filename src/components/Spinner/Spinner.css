@@ -1,0 +1,50 @@
+/* Spinner component styles */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* ── Sizes ──────────────────────────────────────────────── */
+
+.spinner--sm {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-neutral-200);
+}
+
+.spinner--md {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-neutral-200);
+}
+
+.spinner--lg {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-neutral-200);
+}
+
+/* ── Arc ────────────────────────────────────────────────── */
+
+.spinner__arc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: inherit;
+  border-color: transparent;
+  border-top-color: var(--color-primary-500);
+  border-right-color: var(--color-primary-500);
+  animation: spin 0.8s linear infinite;
+}

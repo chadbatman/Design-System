@@ -1,0 +1,29 @@
+/* LoadingBar component styles */
+
+@keyframes indeterminate {
+  0%   { left: -40%; width: 40%; }
+  60%  { left: 100%; width: 40%; }
+  100% { left: 100%; width: 0%; }
+}
+
+.loading-bar {
+  background-color: var(--color-neutral-200);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Fill ───────────────────────────────────────────────── */
+
+.loading-bar__fill {
+  background-color: var(--color-primary-500);
+  height: 8px;
+  border-radius: 4px;
+}
+
+.loading-bar__fill--indeterminate {
+  position: absolute;
+  top: 0;
+  animation: indeterminate 1.5s ease-in-out infinite;
+}
