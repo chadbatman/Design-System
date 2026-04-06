@@ -1,0 +1,167 @@
+/* Design tokens from Figma UI Kit (node 50:62) */
+:root {
+  --color-primary-50:  #e8f4f7;
+  --color-primary-100: #c5e2ea;
+  --color-primary-200: #9ecfdc;
+  --color-primary-500: #1a6f8a;
+  --color-primary-600: #165f77;
+  --color-primary-700: #114e63;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-error:       #dc2626;
+  --color-error-600:   #b91c1c;
+  --color-error-700:   #991b1b;
+  --color-error-light: #fee2e2;
+  --color-white:       #ffffff;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+/* ── Sizes ─────────────────────────────────────────── */
+
+.btn--md {
+  font-size: 14px;
+  line-height: 20px;
+  height: 40px;
+  min-width: 120px;
+  padding: 0 20px;
+}
+
+.btn--sm {
+  font-size: 12px;
+  line-height: 16px;
+  height: 30px;
+  min-width: 80px;
+  padding: 0 12px;
+}
+
+/* ── Primary ────────────────────────────────────────── */
+
+.btn--primary {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+  border-color: var(--color-primary-500);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+}
+
+.btn--primary:active:not(:disabled) {
+  background-color: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+}
+
+.btn--primary:focus-visible:not(:disabled) {
+  background-color: var(--color-primary-500);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 111, 138, 0.4);
+}
+
+.btn--primary:disabled {
+  background-color: var(--color-primary-200);
+  border-color: var(--color-primary-200);
+  color: var(--color-neutral-400);
+}
+
+/* ── Secondary ──────────────────────────────────────── */
+
+.btn--secondary {
+  background-color: var(--color-white);
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background-color: var(--color-primary-50);
+  border-color: var(--color-primary-600);
+}
+
+.btn--secondary:active:not(:disabled) {
+  background-color: var(--color-primary-100);
+  border-color: var(--color-primary-700);
+}
+
+.btn--secondary:focus-visible:not(:disabled) {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 111, 138, 0.4);
+}
+
+.btn--secondary:disabled {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-300);
+  color: var(--color-neutral-400);
+}
+
+/* ── Ghost ──────────────────────────────────────────── */
+
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border-color: transparent;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-primary-50);
+}
+
+.btn--ghost:active:not(:disabled) {
+  background-color: var(--color-primary-100);
+}
+
+.btn--ghost:focus-visible:not(:disabled) {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 111, 138, 0.4);
+}
+
+.btn--ghost:disabled {
+  color: var(--color-neutral-400);
+}
+
+/* ── Destructive ────────────────────────────────────── */
+
+.btn--destructive {
+  background-color: var(--color-error);
+  color: var(--color-white);
+  border-color: var(--color-error);
+}
+
+.btn--destructive:hover:not(:disabled) {
+  background-color: var(--color-error-600);
+  border-color: var(--color-error-600);
+}
+
+.btn--destructive:active:not(:disabled) {
+  background-color: var(--color-error-700);
+  border-color: var(--color-error-700);
+}
+
+.btn--destructive:focus-visible:not(:disabled) {
+  background-color: var(--color-error);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.4);
+}
+
+.btn--destructive:disabled {
+  background-color: var(--color-error-light);
+  border-color: var(--color-error-light);
+  color: var(--color-neutral-400);
+}
