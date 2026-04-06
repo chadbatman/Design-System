@@ -3,8 +3,8 @@ import "./Button.css";
 
 export interface ButtonProps {
   label: string;
-  variant?: "primary" | "secondary" | "ghost";
-  size?: "sm" | "md" | "lg";
+  variant?: "primary" | "secondary" | "ghost" | "destructive";
+  size?: "md" | "sm";
   disabled?: boolean;
   onClick?: () => void;
 }

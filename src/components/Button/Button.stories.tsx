@@ -6,21 +6,20 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ["autodocs"],
   parameters: {
-    // Replace the URL below with your Figma component's share URL.
-    // In Figma: right-click the component → Copy link → paste here.
+    // Figma UI Kit — Button component set (node 50:62)
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/REPLACE_WITH_YOUR_FILE_KEY/Design-System?node-id=REPLACE_WITH_NODE_ID",
+      url: "https://www.figma.com/design/qKvsOqiBZ5mqB3ihpJcSyY/UI-Kit?node-id=50-62",
     },
   },
   argTypes: {
     variant: {
       control: { type: "select" },
-      options: ["primary", "secondary", "ghost"],
+      options: ["primary", "secondary", "ghost", "destructive"],
     },
     size: {
-      control: { type: "select" },
-      options: ["sm", "md", "lg"],
+      control: { type: "radio" },
+      options: ["md", "sm"],
     },
   },
 };
@@ -28,50 +27,58 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// ── Primary ────────────────────────────────────────────
+
 export const Primary: Story = {
-  args: {
-    label: "Button",
-    variant: "primary",
-    size: "md",
-  },
+  args: { label: "Primary", variant: "primary", size: "md" },
 };
+
+export const PrimarySmall: Story = {
+  name: "Primary Small",
+  args: { label: "Primary Small", variant: "primary", size: "sm" },
+};
+
+// ── Secondary ──────────────────────────────────────────
 
 export const Secondary: Story = {
-  args: {
-    label: "Button",
-    variant: "secondary",
-    size: "md",
-  },
+  args: { label: "Secondary", variant: "secondary", size: "md" },
 };
+
+export const SecondarySmall: Story = {
+  name: "Secondary Small",
+  args: { label: "Secondary Small", variant: "secondary", size: "sm" },
+};
+
+// ── Ghost ──────────────────────────────────────────────
 
 export const Ghost: Story = {
-  args: {
-    label: "Button",
-    variant: "ghost",
-    size: "md",
-  },
+  args: { label: "Ghost", variant: "ghost", size: "md" },
 };
 
-export const Small: Story = {
-  args: {
-    label: "Small",
-    variant: "primary",
-    size: "sm",
-  },
+// ── Destructive ────────────────────────────────────────
+
+export const Destructive: Story = {
+  args: { label: "Destructive", variant: "destructive", size: "md" },
 };
 
-export const Large: Story = {
-  args: {
-    label: "Large",
-    variant: "primary",
-    size: "lg",
-  },
+// ── Disabled states ────────────────────────────────────
+
+export const PrimaryDisabled: Story = {
+  name: "Primary — Disabled",
+  args: { label: "Primary", variant: "primary", size: "md", disabled: true },
 };
 
-export const Disabled: Story = {
-  args: {
-    label: "Disabled",
-    variant: "primary",
-    disabled: true,
-  },
+export const SecondaryDisabled: Story = {
+  name: "Secondary — Disabled",
+  args: { label: "Secondary", variant: "secondary", size: "md", disabled: true },
+};
+
+export const GhostDisabled: Story = {
+  name: "Ghost — Disabled",
+  args: { label: "Ghost", variant: "ghost", size: "md", disabled: true },
+};
+
+export const DestructiveDisabled: Story = {
+  name: "Destructive — Disabled",
+  args: { label: "Destructive", variant: "destructive", size: "md", disabled: true },
 };
