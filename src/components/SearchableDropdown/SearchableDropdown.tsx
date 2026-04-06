@@ -17,11 +17,13 @@ export const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
   onChange,
 }) => {
   const [query, setQuery] = useState(value ?? "");
+  const [selectedValue, setSelectedValue] = useState(value ?? "");
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setQuery(value ?? "");
+    setSelectedValue(value ?? "");
   }, [value]);
 
   useEffect(() => {
@@ -40,8 +42,9 @@ export const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
   );
 
   const handleSelect = (option: string) => {
-    onChange?.(option);
+    setSelectedValue(option);
     setQuery(option);
+    onChange?.(option);
     setOpen(false);
   };
 
@@ -76,9 +79,9 @@ export const SearchableDropdown: React.FC<SearchableDropdownProps> = ({
             filtered.map((option) => (
               <li
                 key={option}
-                className={`searchable-dropdown__option${value === option ? " searchable-dropdown__option--selected" : ""}`}
+                className={`searchable-dropdown__option${selectedValue === option ? " searchable-dropdown__option--selected" : ""}`}
                 role="option"
-                aria-selected={value === option}
+                aria-selected={selectedValue === option}
                 onMouseDown={() => handleSelect(option)}
               >
                 {option}

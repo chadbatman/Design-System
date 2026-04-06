@@ -11,12 +11,13 @@ export interface DropdownProps {
 
 export const Dropdown: React.FC<DropdownProps> = ({
   options,
-  value,
+  value: valueProp,
   placeholder = "Select an option",
   disabled = false,
   onChange,
 }) => {
   const [open, setOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(valueProp ?? "");
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   }, []);
 
   const handleSelect = (option: string) => {
+    setSelectedValue(option);
     onChange?.(option);
     setOpen(false);
   };
@@ -52,8 +54,8 @@ export const Dropdown: React.FC<DropdownProps> = ({
         aria-haspopup="listbox"
         aria-expanded={open}
       >
-        <span className={`dropdown__value${!value ? " dropdown__value--placeholder" : ""}`}>
-          {value ?? placeholder}
+        <span className={`dropdown__value${!selectedValue ? " dropdown__value--placeholder" : ""}`}>
+          {selectedValue || placeholder}
         </span>
         <span className="dropdown__caret">{open ? "▲" : "▼"}</span>
       </button>
@@ -62,9 +64,9 @@ export const Dropdown: React.FC<DropdownProps> = ({
           {options.map((option) => (
             <li
               key={option}
-              className={`dropdown__option${value === option ? " dropdown__option--selected" : ""}`}
+              className={`dropdown__option${selectedValue === option ? " dropdown__option--selected" : ""}`}
               role="option"
-              aria-selected={value === option}
+              aria-selected={selectedValue === option}
               onMouseDown={() => handleSelect(option)}
             >
               {option}
