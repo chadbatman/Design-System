@@ -34,7 +34,6 @@
   border-radius: 12px;
   background-color: var(--color-neutral-200);
   position: relative;
-  overflow: hidden;
   transition: background-color 0.2s ease, box-shadow 0.15s ease;
   flex-shrink: 0;
 }
@@ -49,7 +48,7 @@
 }
 
 .toggle__input:focus-visible ~ .toggle__track {
-  box-shadow: 0 0 0 3px rgba(26, 111, 138, 0.3);
+  box-shadow: 0 0 0 3px rgba(26, 111, 138, 0.25);
 }
 
 .toggle__thumb {
