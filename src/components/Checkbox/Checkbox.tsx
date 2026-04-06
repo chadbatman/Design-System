@@ -39,7 +39,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         <span
           className={`checkbox__box${checked ? " checkbox__box--checked" : ""}${disabled && !checked ? " checkbox__box--disabled" : ""}${disabled && checked ? " checkbox__box--checked checkbox__box--disabled" : ""}`}
         >
-          {checked && <span className="checkbox__checkmark">✓</span>}
+          <span className="checkbox__checkmark">✓</span>
         </span>
       </span>
       {label && (
