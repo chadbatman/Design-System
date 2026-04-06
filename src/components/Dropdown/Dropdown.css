@@ -1,0 +1,94 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 220px;
+}
+
+.dropdown__trigger {
+  width: 220px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-white);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-neutral-600);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dropdown__trigger:focus-visible,
+.dropdown__trigger--open {
+  border: 2px solid var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(26, 111, 138, 0.3);
+}
+
+.dropdown__trigger--disabled,
+.dropdown__trigger:disabled {
+  background-color: var(--color-neutral-50);
+  border-color: var(--color-neutral-200);
+  color: var(--color-neutral-400);
+  cursor: not-allowed;
+}
+
+.dropdown__value {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown__value--placeholder {
+  color: var(--color-neutral-400);
+}
+
+.dropdown__caret {
+  font-size: 10px;
+  color: var(--color-neutral-400);
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 220px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 4px 0;
+  list-style: none;
+  margin: 0;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.dropdown__option {
+  padding: 10px 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-neutral-800);
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.dropdown__option:hover {
+  background-color: var(--color-primary-50);
+}
+
+.dropdown__option--selected {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-500);
+}

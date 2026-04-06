@@ -6,9 +6,13 @@
   --color-primary-500: #1a6f8a;
   --color-primary-600: #165f77;
   --color-primary-700: #114e63;
+  --color-neutral-50:  #f9fafb;
   --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
   --color-neutral-300: #d1d5db;
   --color-neutral-400: #9ca3af;
+  --color-neutral-600: #4b5563;
+  --color-neutral-800: #1f2937;
   --color-error:       #dc2626;
   --color-error-600:   #b91c1c;
   --color-error-700:   #991b1b;

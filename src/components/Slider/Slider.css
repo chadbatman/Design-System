@@ -1,0 +1,78 @@
+.slider {
+  display: inline-flex;
+  align-items: center;
+  width: 200px;
+}
+
+.slider__input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--color-primary-500) 0%,
+    var(--color-primary-500) var(--slider-fill, 50%),
+    var(--color-neutral-200) var(--slider-fill, 50%),
+    var(--color-neutral-200) 100%
+  );
+  transition: box-shadow 0.15s ease;
+}
+
+.slider__input:focus-visible {
+  box-shadow: 0 0 0 3px rgba(26, 111, 138, 0.3);
+}
+
+/* Webkit thumb */
+.slider__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-primary-500);
+  border: 2px solid var(--color-white);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.15s ease;
+}
+
+/* Firefox thumb */
+.slider__input::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-primary-500);
+  border: 2px solid var(--color-white);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.15s ease;
+}
+
+/* Disabled state */
+.slider__input--disabled,
+.slider__input:disabled {
+  cursor: not-allowed;
+  background: linear-gradient(
+    to right,
+    var(--color-neutral-400) 0%,
+    var(--color-neutral-400) var(--slider-fill, 50%),
+    var(--color-neutral-200) var(--slider-fill, 50%),
+    var(--color-neutral-200) 100%
+  );
+}
+
+.slider__input--disabled::-webkit-slider-thumb,
+.slider__input:disabled::-webkit-slider-thumb {
+  background-color: var(--color-neutral-400);
+  cursor: not-allowed;
+}
+
+.slider__input--disabled::-moz-range-thumb,
+.slider__input:disabled::-moz-range-thumb {
+  background-color: var(--color-neutral-400);
+  cursor: not-allowed;
+}
