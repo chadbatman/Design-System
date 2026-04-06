@@ -37,6 +37,7 @@
 
 .card--with-image {
   padding: 0;
+  gap: 0;
 }
 
 .card__image-placeholder {
